@@ -1,0 +1,34 @@
+<head>
+<style>
+  a {
+    color: black;
+    outline: none;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+
+  a:focus { text-decoration-style: solid }
+
+  strong {
+    font-family: sans-serif;
+  }
+</style>
+</head>
+
+<body>
+<p><a href="#"></a>
+
+<script>
+  let rpc = 'qubes.Filecopy';
+  let txt = 'Copy file(s)';
+  let rpc_html =   `<code title="${txt}">${rpc}</code>`
+  let txt_html = `<strong title="${rpc}">${txt}</strong>`
+  let a = document.querySelector('a');
+  let f = () => {
+    a.innerHTML = a.innerHTML === txt_html ? rpc_html : txt_html;
+    a.blur();
+  }
+  a.onclick = f;
+  f();
+</script>
+</body>
